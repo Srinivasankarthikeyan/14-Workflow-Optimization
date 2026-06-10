@@ -17,7 +17,7 @@
 #       - name: Slow Test
 #         run: sleep 60
 
-name: Concurrency Demo
+name: 86. Concurrency Demo
 
 on:
   workflow_dispatch:
