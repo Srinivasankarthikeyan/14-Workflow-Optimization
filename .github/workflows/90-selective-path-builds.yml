@@ -1,0 +1,16 @@
+name: 90. Selective Path-based Builds
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'tests/**'
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Build
+        run: echo "Files in src/ or tests/ changed. Running build..."

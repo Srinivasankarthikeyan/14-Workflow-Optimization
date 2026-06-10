@@ -1,0 +1,36 @@
+# name: 86. Concurrency Groups
+# on:
+#   pull_request:
+#     branches: [main]
+
+# # Ensures that only one workflow using the same concurrency group will run at a time.
+# # If a new run is started, the previous run will be cancelled (cancel-in-progress: true).
+# concurrency:
+#   group: ${{ github.workflow }}-${{ github.ref }}
+#   cancel-in-progress: true
+
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Slow Test
+#         run: sleep 60
+
+name: Concurrency Demo
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: demo
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Starting..."
+          sleep 120
+          echo "Finished"
