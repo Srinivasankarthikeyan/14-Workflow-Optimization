@@ -1,4 +1,4 @@
-name: 87. Cancel  Duplicate Runs
+name: 87. Cancel Duplicate Runs
 on:
   push:
     branches: [main]
